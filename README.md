@@ -22,8 +22,8 @@ _🔎 Add a screenshot of your deployed portfolio here._
 - [React](https://reactjs.org/)
 - [Vite](https://vitejs.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Framer Motion](https://www.framer.com/motion/) *(if used for animations)*
-- [React Icons](https://react-icons.github.io/react-icons/) *(if used)*
+- [Framer Motion](https://www.framer.com/motion/)
+- [React Icons](https://react-icons.github.io/react-icons/) 
 
 ## 📦 Installation & Setup
 
