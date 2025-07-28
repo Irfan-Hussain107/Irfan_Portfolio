@@ -34,7 +34,7 @@ function Navbar() {
 
     return (
         <>
-            <div className='hidden md:flex justify-center'>
+            <div className='hidden md:flex z-[990] justify-center'>
                 <nav className={`fixed top-4 z-50 transition-all duration-300 ${
                     scrolled 
                         ? 'backdrop-blur-lg bg-[#0d1224]/80 border border-violet-500/30 shadow-2xl shadow-violet-500/20' 
