@@ -15,7 +15,7 @@ A sleek, modern, and fully responsive developer portfolio built with **React** a
 ## 🖼️ Preview
 
 ![Portfolio Screenshot](./public/preview.png)  
-_🔎 Add a screenshot of your deployed portfolio here._
+
 
 ## 🔧 Tech Stack
 
