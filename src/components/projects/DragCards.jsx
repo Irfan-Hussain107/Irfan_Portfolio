@@ -72,7 +72,7 @@ const Cards = () => {
         live="https://irfan-portfolio-seven.vercel.app/"
         rotate="18deg"
         top="15%"
-        left="60%"
+        left="50%"
         className="w-44 sm:w-56 md:w-88"
       />
     </div>
@@ -81,6 +81,7 @@ const Cards = () => {
 
 const Card = ({ containerRef, src, alt, top, left, rotate, className, title, github, live }) => {
   const [zIndex, setZIndex] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
 
   const updateZIndex = () => {
     const els = document.querySelectorAll(".drag-elements");
@@ -95,7 +96,16 @@ const Card = ({ containerRef, src, alt, top, left, rotate, className, title, git
   return (
     <motion.div
         onMouseDown={updateZIndex}
-        style={{ top, left, rotate, zIndex }}
+        onTouchStart={updateZIndex}
+        onDragStart={() => setIsDragging(true)}
+        onDragEnd={() => setIsDragging(false)}
+        style={{ 
+          top, 
+          left, 
+          rotate: isDragging ? rotate : rotate, 
+          zIndex,
+          touchAction: 'none'
+        }}
         className={twMerge(
             "drag-elements absolute bg-white text-black p-3 rounded-lg shadow-lg cursor-grab active:cursor-grabbing",
             className
@@ -103,6 +113,12 @@ const Card = ({ containerRef, src, alt, top, left, rotate, className, title, git
         drag
         dragConstraints={containerRef}
         dragElastic={0.65}
+        whileDrag={{ 
+          rotate: rotate
+        }}
+        animate={{ 
+          rotate: rotate 
+        }}
     >
         <img src={src} alt={alt} className="rounded-md mb-2 pointer-events-none w-full" />
         <h3 className="font-bold text-xs sm:text-sm mb-3">{title}</h3>
