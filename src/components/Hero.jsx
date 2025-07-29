@@ -61,7 +61,16 @@ function Hero() {
 
                         <div className="relative inline-block px-6 py-3 font-semibold text-blue-600 border border-blue-600 group overflow-hidden rounded-lg transition duration-300 ease-in-out cursor-pointer">
                             <span className="absolute inset-0 bg-gradient-to-r from-pink-500 to-violet-600 translate-y-full group-hover:translate-y-0 transition duration-500 ease-in-out z-0"></span>
-                            <Link to='contact' className="relative z-10 text-white group-hover:text-white">Hire Me</Link>
+                            <Link 
+                                to='contact' 
+                                smooth={true}
+                                duration={800}
+                                offset={-70}
+                                spy={true}
+                                className="relative z-10 text-white group-hover:text-white"
+                            >
+                                Hire Me
+                            </Link>
                         </div>
                     </div>
 
