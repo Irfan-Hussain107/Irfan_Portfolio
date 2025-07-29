@@ -67,7 +67,7 @@ const Cards = () => {
         containerRef={containerRef}
         src="/projects/portfolio_full.png"
         alt="Example image"
-        title="Portfolio Full"
+        title="Portfolio Web"
         github="https://github.com/Irfan-Hussain107/Irfan_Portfolio"
         live="https://irfan-portfolio-seven.vercel.app/"
         rotate="18deg"
