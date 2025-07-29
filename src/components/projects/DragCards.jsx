@@ -81,7 +81,6 @@ const Cards = () => {
 
 const Card = ({ containerRef, src, alt, top, left, rotate, className, title, github, live }) => {
   const [zIndex, setZIndex] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
 
   const updateZIndex = () => {
     const els = document.querySelectorAll(".drag-elements");
@@ -97,12 +96,14 @@ const Card = ({ containerRef, src, alt, top, left, rotate, className, title, git
     <motion.div
         onMouseDown={updateZIndex}
         onTouchStart={updateZIndex}
-        onDragStart={() => setIsDragging(true)}
-        onDragEnd={() => setIsDragging(false)}
-        style={{ 
+        initial={{ 
           top, 
           left, 
-          rotate: isDragging ? rotate : rotate, 
+          rotate,
+          x: 0,
+          y: 0
+        }}
+        style={{ 
           zIndex,
           touchAction: 'none'
         }}
@@ -113,12 +114,6 @@ const Card = ({ containerRef, src, alt, top, left, rotate, className, title, git
         drag
         dragConstraints={containerRef}
         dragElastic={0.65}
-        whileDrag={{ 
-          rotate: rotate
-        }}
-        animate={{ 
-          rotate: rotate 
-        }}
     >
         <img src={src} alt={alt} className="rounded-md mb-2 pointer-events-none w-full" />
         <h3 className="font-bold text-xs sm:text-sm mb-3">{title}</h3>
